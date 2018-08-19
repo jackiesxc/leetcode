@@ -1,4 +1,4 @@
-package org.jackie.difficult;
+package org.jackie.n50.difficult;
 
 import java.util.ArrayList;
 import java.util.List;

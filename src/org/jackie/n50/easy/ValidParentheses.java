@@ -1,4 +1,4 @@
-package org.jackie.easy;
+package org.jackie.n50.easy;
 
 import static org.junit.Assert.*;
 

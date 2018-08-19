@@ -1,4 +1,4 @@
-package org.jackie.difficult;
+package org.jackie.n50.difficult;
 
 import java.util.LinkedList;
 import java.util.List;

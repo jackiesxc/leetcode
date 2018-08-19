@@ -1,4 +1,4 @@
-package org.jackie.normal;
+package org.jackie.n50.normal;
 
 import static org.junit.Assert.*;
 
