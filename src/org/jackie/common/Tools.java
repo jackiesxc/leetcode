@@ -32,4 +32,12 @@ public class Tools {
 		}
 		return list.get(list.size()-1);
 	}
+	
+	//比较两个数组是否相等
+	static public<T> boolean compareList(List<T> list1, List<T> list2){
+/*		if(list1.size() != list1.size())
+			return false;*/
+		boolean result = list2.containsAll(list1) && list1.containsAll(list2);	
+		return result;	
+	}
 }
