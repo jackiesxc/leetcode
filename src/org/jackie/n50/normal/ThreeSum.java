@@ -1,3 +1,9 @@
+/**    
+* <p>15. 三数之和</p>  
+* @author Jackie Su  
+* @date 2018年10月1日  
+* @version 1.0  
+*/ 
 package org.jackie.n50.normal;
 
 import static org.junit.Assert.*;
@@ -17,6 +23,14 @@ public class ThreeSum {
 		//assertEquals(fun.threeSum(new int[]{-1,0,1,2,-1,-4}), null);
 		//assertEquals(fun.threeSum(new int[]{0, 0, 0, 0}), null);
 		//assertEquals(fun.threeSum(new int[]{-1, 0, 1, 2, -1, -4}), null);
+	}
+	
+	@Test
+	public void test2() {
+		ThreeSum fun = new ThreeSum();
+		//assertEquals(fun.threeSum(new int[]{-1,0,1,2,-1,-4}), null);
+		//assertEquals(fun.threeSum(new int[]{0, 0, 0, 0}), null);
+		assertEquals(fun.threeSum(new int[]{-1, 0, 1, 2, -1, -4}), null);
 	}
 	
     public List<List<Integer>> threeSum(int[] nums) {

@@ -1,5 +1,6 @@
 package org.jackie.common;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -39,5 +40,13 @@ public class Tools {
 			return false;*/
 		boolean result = list2.containsAll(list1) && list1.containsAll(list2);	
 		return result;	
+	}
+	
+	static public<T> List<T> generateList(T[] values){
+		List<T> list = new ArrayList<T>();
+		for (T element : values) {
+			list.add(element);
+		}
+		return list;
 	}
 }
