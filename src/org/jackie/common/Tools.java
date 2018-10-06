@@ -15,6 +15,9 @@ public class Tools {
 			}
 			list.add(node);
 		}
+		if (keys.length == 0) {
+			return null;
+		}
 		return list.get(list.size()-1);
 	}
 	

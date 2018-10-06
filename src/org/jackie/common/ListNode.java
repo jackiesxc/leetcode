@@ -22,4 +22,20 @@ public class ListNode {
 		return val +"";
 	}
 	
+	@Override
+	public boolean equals(Object object) {
+		if(this==object)
+			return true;
+		if(object instanceof ListNode){
+			ListNode anotherListNode = (ListNode) object;
+			if (this.next == null && anotherListNode.next==null && this.val == anotherListNode.val) {
+				return true;
+			}
+			else {
+				return this.next.equals(anotherListNode.next);
+			}
+		}
+		return false;
+	}
+	
 }
