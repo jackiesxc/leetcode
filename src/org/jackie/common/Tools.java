@@ -3,6 +3,8 @@ package org.jackie.common;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Tools {
 	public static ListNode convertListNode(int[] keys) {
@@ -44,6 +46,14 @@ public class Tools {
 		boolean result = list2.containsAll(list1) && list1.containsAll(list2);	
 		return result;	
 	}
+	
+    static public boolean compareArray(int[] array1, int[] array2){
+
+        List<Integer> list1=IntStream.of(array1).boxed().collect(Collectors.toList());
+        List<Integer> list2=IntStream.of(array2).boxed().collect(Collectors.toList());
+        boolean result = list2.containsAll(list1) && list1.containsAll(list2);  
+        return result;  
+    }
 	
 	static public<T> List<T> generateList(T[] values){
 		List<T> list = new ArrayList<T>();
