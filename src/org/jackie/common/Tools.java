@@ -39,14 +39,33 @@ public class Tools {
 		return list.get(list.size()-1);
 	}
 	
-	//比较两个数组是否相等
+	//比较两个list是否相等
 	static public<T> boolean compareList(List<T> list1, List<T> list2){
-/*		if(list1.size() != list1.size())
-			return false;*/
+		if(list1.size() != list1.size())
+			return false;
 		boolean result = list2.containsAll(list1) && list1.containsAll(list2);	
 		return result;	
 	}
 	
+	//比较两个list是否相等
+	static public boolean compareArrayList(List<List<Integer>> list1, List<List<Integer>> list2){
+		if (list1.size() != list2.size()) 
+			return false;
+		for (List<Integer> l1 : list1) {
+			boolean flag = false;  //l1是否包含在list2中的标识
+			for (List<Integer> l2 : list2) {
+				if (compareList(l1, l2)) {
+					flag = true;
+					break;
+				}
+			}
+			if (!flag) 
+				return false;
+		}
+		return true;	
+	}
+	
+	//比较两个数组是否相等
     static public boolean compareArray(int[] array1, int[] array2){
 
         List<Integer> list1=IntStream.of(array1).boxed().collect(Collectors.toList());
@@ -55,11 +74,39 @@ public class Tools {
         return result;  
     }
 	
+    //将数组转换成list
 	static public<T> List<T> generateList(T[] values){
 		List<T> list = new ArrayList<T>();
 		for (T element : values) {
 			list.add(element);
 		}
 		return list;
+	}
+	
+	public static void main(String[] args) {
+		List<List<Integer>> list1 = new ArrayList<List<Integer>>();
+		List<Integer> l1 = new ArrayList<Integer>();
+		l1.add(1);
+		l1.add(1);
+		l1.add(1);
+		list1.add(l1);
+		List<Integer> l11 = new ArrayList<Integer>();
+		l11.add(1);
+		l11.add(3);
+		l11.add(5);	
+		l11.add(5);
+		list1.add(l11);
+		List<List<Integer>> list2 = new ArrayList<List<Integer>>();
+		List<Integer> l2 = new ArrayList<Integer>();
+		l2.add(1);
+		l2.add(1);
+		l2.add(1);
+		list2.add(l2);
+		List<Integer> l22 = new ArrayList<Integer>();
+		l22.add(1);
+		l22.add(3);
+		l22.add(5);	
+		list2.add(l22);
+		System.out.println(compareArrayList(list1,list2));
 	}
 }
