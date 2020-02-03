@@ -48,12 +48,12 @@ public class Tools {
 	}
 	
 	//比较两个list是否相等
-	static public boolean compareArrayList(List<List<Integer>> list1, List<List<Integer>> list2){
+	static public<T> boolean compareArrayList(List<List<T>> list1, List<List<T>> list2){
 		if (list1.size() != list2.size()) 
 			return false;
-		for (List<Integer> l1 : list1) {
+		for (List<T> l1 : list1) {
 			boolean flag = false;  //l1是否包含在list2中的标识
-			for (List<Integer> l2 : list2) {
+			for (List<T> l2 : list2) {
 				if (compareList(l1, l2)) {
 					flag = true;
 					break;
