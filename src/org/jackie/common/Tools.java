@@ -73,6 +73,18 @@ public class Tools {
         boolean result = list2.containsAll(list1) && list1.containsAll(list2);  
         return result;  
     }
+    
+	//比较两个二维数组是否相等
+    static public boolean compareArray(int[][] array1, int[][] array2){
+    	if(array1.length != array1.length) return false;
+    	for (int i = 0; i < array2.length; i++) {
+            List<Integer> list1=IntStream.of(array1[i]).boxed().collect(Collectors.toList());
+            List<Integer> list2=IntStream.of(array2[i]).boxed().collect(Collectors.toList());
+            boolean result = list2.containsAll(list1) && list1.containsAll(list2); 
+            if(!result) return false;
+		}
+        return true;  
+    }
 	
     //将数组转换成list
 	static public<T> List<T> generateList(T[] values){
