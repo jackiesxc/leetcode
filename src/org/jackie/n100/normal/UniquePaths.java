@@ -2,9 +2,9 @@ package org.jackie.n100.normal;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-//62. 涓嶅悓璺緞
+//62. 不同路径
 public class UniquePaths {
-	//閲囩敤鍔ㄦ�佽鍒掓柟娉曪紝f(m,n) = f(m-1, n) + f(m, n-1)
+	//采用动态规划方法，f(m,n) = f(m-1, n) + f(m, n-1)
     public int uniquePaths(int length, int heigth) {
     	int[][] array = new int[length][heigth];
     	for (int i = 0; i < length; i++) {
@@ -21,7 +21,7 @@ public class UniquePaths {
     	return array[length-1][heigth-1];
     }
     
-//    //浣跨敤閫掑綊鏂瑰紡锛屼絾涓嶇鍚堟�ц兘瑕佹眰
+//    //使用递归方式，但不符合性能要求
 //    private int run(int length, int heigth, int curX, int curY, int count) {
 //		if(curX < length)
 //			count = run(length, heigth, curX+1, curY, count);
