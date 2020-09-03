@@ -2,7 +2,6 @@ package org.jackie.n100.difficult;
 
 import static org.junit.Assert.assertEquals;
 
-import org.jackie.n100.normal.SearchMatrix;
 import org.junit.Test;
 
 //85. 最大矩形
