@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+
+//50. Pow(x, n)
 public class MyPow {
 	private static final double DELTA = 1e-6;
     public double myPow(double x, int n) {
@@ -18,13 +20,19 @@ public class MyPow {
 		}
     }
     
-	private double pow(double x, int n) {
-		double result = 1;
-		for (int i = 0; i < n; i++) {
-			result *= x;
-		}
-		return result;
-	}
+    private double pow(double x, int n) {
+        if ( n==0 )
+            return 1;
+        double result = pow(x, n/2);
+        if ( n % 2 ==0 ){
+            result = result*result;
+        }
+        else {
+            result = x*result*result;
+        }
+
+        return result;
+    }
 
 	@Test
     public void test1() {
