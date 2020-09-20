@@ -39,7 +39,7 @@ public class Tools {
 		return list.get(list.size()-1);
 	}
 	
-	//比较两个list是否相等
+	//姣旇緝涓や釜list鏄惁鐩哥瓑
 	static public<T> boolean compareList(List<T> list1, List<T> list2){
 		if(list1.size() != list1.size())
 			return false;
@@ -47,12 +47,12 @@ public class Tools {
 		return result;	
 	}
 	
-	//比较两个list是否相等
+	//姣旇緝涓や釜list鏄惁鐩哥瓑
 	static public<T> boolean compareArrayList(List<List<T>> list1, List<List<T>> list2){
 		if (list1.size() != list2.size()) 
 			return false;
 		for (List<T> l1 : list1) {
-			boolean flag = false;  //l1是否包含在list2中的标识
+			boolean flag = false;  //l1鏄惁鍖呭惈鍦╨ist2涓殑鏍囪瘑
 			for (List<T> l2 : list2) {
 				if (compareList(l1, l2)) {
 					flag = true;
@@ -65,7 +65,7 @@ public class Tools {
 		return true;	
 	}
 	
-	//比较两个数组是否相等
+	//姣旇緝涓や釜鏁扮粍鏄惁鐩哥瓑
     static public boolean compareArray(int[] array1, int[] array2){
 
         List<Integer> list1=IntStream.of(array1).boxed().collect(Collectors.toList());
@@ -74,7 +74,7 @@ public class Tools {
         return result;  
     }
     
-	//比较两个二维数组是否相等
+	//姣旇緝涓や釜浜岀淮鏁扮粍鏄惁鐩哥瓑
     static public boolean compareArray(int[][] array1, int[][] array2){
     	if(array1.length != array1.length) return false;
     	for (int i = 0; i < array2.length; i++) {
@@ -86,7 +86,7 @@ public class Tools {
         return true;  
     }
 	
-    //将数组转换成list
+    //灏嗘暟缁勮浆鎹㈡垚list
 	static public<T> List<T> generateList(T[] values){
 		List<T> list = new ArrayList<T>();
 		for (T element : values) {

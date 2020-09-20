@@ -32,7 +32,7 @@ public class FindMedianSortedArrays {
         if (size==0) {
 			return 0;
 		}
-        if (size%2==0) {  //list中包含偶数个元素
+        if (size%2==0) {  //list涓寘鍚伓鏁颁釜鍏冪礌
         	result = (double)(list.get(size/2) + list.get(size/2-1))/2;
 		} else {
 			result = list.get(size/2);
